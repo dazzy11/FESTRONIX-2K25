@@ -233,9 +233,7 @@
     opacity: 0.15;       /* very subtle */
     filter: blur(50px);  /* softer blur */
   }
- body {
-    
-  }
+
   /* Dark overlay behind content */
   .wrap::before {
     content: "";
@@ -380,60 +378,75 @@
     </main>
 
     <!-- EVENTS SECTION (from events.html) -->
+<!-- EVENTS SECTION (from events.html) -->
 <section id="events" class="page-section">
   <h1 style="font-family:Rajdhani;font-size:28px;margin-bottom:20px;color:white">Event Details</h1>
 
+  <!-- TECHNICAL EVENTS -->
   <div class="event-category">
     <h2 style="color:#7fe3ff;font-family:Rajdhani;font-size:24px;margin-bottom:10px">Technical Events ⚙️</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
 
+      <!-- Paper Presentation -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">Paper Presentation</h3>
         <p style="color:#cbe9ff">Showcase innovative research and emerging ideas through well-structured papers evaluated by experts.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> Conference Hall</p>
-        <p style="color:#cbe9ff"><strong>Coordinator:</strong> Mrs. A. Thenmozhi &  Mrs. S. Gayathri</p>
+        <p style="color:#cbe9ff"><strong>Coordinator:</strong> Mrs. A. Thenmozhi & Mrs. S. Gayathri</p>
+        <button class="rules-btn" onclick="showRules('paperRules')">View Rules</button>
       </div>
 
+      <!-- Ideathon -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">Ideathon</h3>
         <p style="color:#cbe9ff">A brainstorming challenge to pitch creative solutions for real-world problems in tech and society.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> Smart Class Room (CSE Block)</p>
         <p style="color:#cbe9ff"><strong>Coordinator:</strong> Ms. M. Suriya</p>
+        <button class="rules-btn" onclick="showRules('ideathonRules')">View Rules</button>
       </div>
 
+      <!-- Video Editing -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">Video Editing</h3>
         <p style="color:#cbe9ff">Unleash your creativity by crafting an engaging short video on the given theme using editing software.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> Lab-2 (CSE Dept)</p>
         <p style="color:#cbe9ff"><strong>Coordinator:</strong> Ms. V. Sowmiya</p>
+        <button class="rules-btn" onclick="showRules('videoRules')">View Rules</button>
       </div>
 
     </div>
   </div>
 
+  <!-- NON-TECHNICAL EVENTS -->
   <div class="event-category" style="margin-top:40px">
     <h2 style="color:#7fe3ff;font-family:Rajdhani;font-size:24px;margin-bottom:10px">Non-Technical Events 🎮</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
 
+      <!-- Free Fire -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">Free Fire</h3>
         <p style="color:#cbe9ff">A thrilling mobile gaming battle where strategy and teamwork decide the winner.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> CSE Lab</p>
         <p style="color:#cbe9ff"><strong>Coordinator:</strong> Mrs. V. Kalpana</p>
+        <button class="rules-btn" onclick="showRules('freeFireRules')">View Rules</button>
       </div>
 
+      <!-- ConnectionX -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">ConnectionX</h3>
         <p style="color:#cbe9ff">A fun brain-teasing event where clues connect to form words, phrases, or concepts.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> CSE Seminar Hall</p>
         <p style="color:#cbe9ff"><strong>Coordinator:</strong> Mrs. A. Dhivya Bharathi</p>
+        <button class="rules-btn" onclick="showRules('connectionRules')">View Rules</button>
       </div>
 
+      <!-- TuneSeek -->
       <div class="event-card" style="background:rgba(255,255,255,0.05);padding:18px;border-radius:16px;backdrop-filter:blur(6px)">
         <h3 style="color:white;font-family:Rajdhani;font-size:22px">TuneSeek</h3>
         <p style="color:#cbe9ff">Test your music sense in this melody identification challenge where rhythm meets memory.</p>
         <p style="color:#7fe3ff"><strong>Venue:</strong> Mini Auditorium</p>
         <p style="color:#cbe9ff"><strong>Coordinator:</strong> Mrs. K. Vallipriyadharshini</p>
+        <button class="rules-btn" onclick="showRules('tuneSeekRules')">View Rules</button>
       </div>
 
     </div>
@@ -444,6 +457,113 @@
     <div>All Rights Reserved</div>
   </footer>
 </section>
+
+<!-- MODALS FOR RULES -->
+<div id="rulesModal" class="rules-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);justify-content:center;align-items:center;z-index:1000;">
+  <div style="background:rgba(255,255,255,0.08);padding:20px;border-radius:12px;max-width:500px;color:white;overflow-y:auto;max-height:80vh;">
+    <h3 id="rulesTitle" style="font-family:Rajdhani;color:#7fe3ff"></h3>
+    <ul id="rulesContent" style="font-family:Poppins;font-size:15px;line-height:1.6;margin-top:10px;"></ul>
+    <button onclick="closeRules()" style="margin-top:14px;background:#7fe3ff;color:#001122;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-weight:bold;">Close</button>
+  </div>
+</div>
+
+<script>
+  const rulesData = {
+    paperRules: {
+      title: "Paper Presentation Rules",
+      list: [
+        "Maximum 2 members per team.",
+        "Topics must be related to Computer Science, Information Technology, or Emerging Technologies (AI, IoT, AR/VR, Cybersecurity, etc.).",
+        "Papers should be prepared in IEEE format.",
+        "PowerPoint presentation (PPT) is mandatory.",
+        "If the paper is original (own work), bonus points will be awarded.",
+        "Plagiarism or copied content will lead to disqualification."
+      ]
+    },
+    ideathonRules: {
+      title: "Ideathon Rules",
+      list: [
+        "Maximum 3 members per team.",
+        "Problem statements can be chosen from real-world or technology-based challenges.",
+        "Each team must clearly explain problem, proposed solution, and impact.",
+        "Prototype/demo with code execution is optional but adds bonus points.",
+        "Plagiarism or copied ideas will be disqualified."
+      ]
+    },
+    videoRules: {
+      title: "Video Editing Rules",
+      list: [
+        "Maximum 2 members per team.",
+        "Participants can use any offline editing tool.",
+        "Final output duration should not exceed 1-2 minutes.",
+        "Offensive or copyrighted content will lead to disqualification."
+      ]
+    },
+    freeFireRules: {
+      title: "Free Fire Rules",
+      list: [
+        "Registration per head Rs. 250.",
+        "4 members per team must.",
+        "Ensure a stable internet connection before the match.",
+        "Use of hacks, mods, scripts, or any unfair means is strictly prohibited."
+      ]
+    },
+    connectionRules: {
+      title: "ConnectionX Rules",
+      list: [
+        "Each team will be shown a series of images or hints related to a word or phrase.",
+        "The faster you answer, the higher your score.",
+        "No use of mobile phones or external help.",
+        "Top teams from preliminary rounds qualify for finals."
+      ]
+    },
+    tuneSeekRules: {
+      title: "TuneSeek Rules",
+      list: [
+        "Maximum 2 members per team.",
+        "Identify songs or background scores played for short durations.",
+        "Rounds may include humming, reversed audio, or instrumental clues.",
+        "Operates on a buzzer system, prioritizing the first respondent.",
+        "No use of phones.",
+        "Time limits strictly followed."
+      ]
+    }
+  };
+
+  function showRules(eventKey) {
+    const modal = document.getElementById("rulesModal");
+    const title = document.getElementById("rulesTitle");
+    const list = document.getElementById("rulesContent");
+    const data = rulesData[eventKey];
+
+    title.textContent = data.title;
+    list.innerHTML = data.list.map(rule => `<li>${rule}</li>`).join("");
+    modal.style.display = "flex";
+  }
+
+  function closeRules() {
+    document.getElementById("rulesModal").style.display = "none";
+  }
+</script>
+
+<style>
+  .rules-btn {
+    margin-top:10px;
+    background:#7fe3ff;
+    color:#001122;
+    border:none;
+    padding:6px 12px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .rules-btn:hover {
+    background:#a4f5ff;
+    transform:scale(1.05);
+  }
+</style>
+
 
 
     <!-- AGENDA SECTION (from agenda.html) -->
@@ -573,13 +693,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
